@@ -1,4 +1,5 @@
 using System;
+using GeometryToolbox.Shape.Query;
 
 namespace GeometryToolbox.Shape
 {
@@ -13,12 +14,9 @@ namespace GeometryToolbox.Shape
             B = b;
         }
 
-        public override double GetArea()
+        public override void Accept(IVisitor visitor)
         {
-            double width = Math.Abs(B.X - A.X);
-            double height = Math.Abs(B.Y - A.Y);
-
-            return width * height;
+            visitor.Visit(this);
         }
     }
 }

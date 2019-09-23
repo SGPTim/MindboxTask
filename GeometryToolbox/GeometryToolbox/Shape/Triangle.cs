@@ -1,4 +1,5 @@
 using System;
+using GeometryToolbox.Shape.Query;
 
 namespace GeometryToolbox.Shape
 {
@@ -15,11 +16,9 @@ namespace GeometryToolbox.Shape
             C = c;
         }
 
-        public override double GetArea()
+        public override void Accept(IVisitor visitor)
         {
-            //т.к. модель построенна в 2д пространстве то просто вычислим площадь через векторное произведение
-            // а не через 3 стороны.
-            return Math.Abs((B.X - A.X) * (C.Y - A.Y) - (C.X - A.X) * (B.Y - A.Y)) / 2;
+            visitor.Visit(this);
         }
     }
 }

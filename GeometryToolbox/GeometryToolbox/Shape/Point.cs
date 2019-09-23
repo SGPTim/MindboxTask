@@ -20,6 +20,10 @@ namespace GeometryToolbox.Shape
 
         public override int GetHashCode() => HashCode.Combine(X, Y);
 
+        public static Point operator -(Point left, Point right) => new Point(left.X - right.X, left.Y - right.Y);
+
+        public static Point operator +(Point left, Point right) => new Point(right.X + left.X, right.Y + left.Y);
+        
         public static bool operator ==(Point left, Point right) => left.X == right.X && left.Y == right.Y;
 
         public static bool operator !=(Point left, Point right) => !(left == right);

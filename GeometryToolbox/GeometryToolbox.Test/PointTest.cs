@@ -32,5 +32,20 @@ namespace Tests
             Assert.False(pLeft.Equals(pRight));
             Assert.False(pLeft.Equals((object)pRight));
         }
+        
+        [Test]
+        [TestCase(0, 0)]
+        [TestCase(Double.MinValue, Double.MaxValue)]
+        [TestCase(Double.MaxValue, Double.MinValue)]
+        public void ArithmeticTestWithSizeF(double x, double y)
+        {
+            Point p = new Point(x, y);
+            Point s = new Point(y, x);
+
+            Point addExpected = new Point(x + y, y + x);
+            Point subExpected = new Point(x - y, y - x);
+            Assert.AreEqual(addExpected, p + s);
+            Assert.AreEqual(subExpected, p - s);
+        }
     }
 }

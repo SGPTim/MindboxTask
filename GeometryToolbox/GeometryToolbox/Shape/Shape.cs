@@ -1,7 +1,9 @@
-﻿namespace GeometryToolbox.Shape
+﻿using GeometryToolbox.Shape.Query;
+
+namespace GeometryToolbox.Shape
 {
     public abstract class Shape
     {
-        public abstract double GetArea();
+        public abstract void Accept(IVisitor visitor);
     }
 }
