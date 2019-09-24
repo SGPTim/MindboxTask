@@ -6,6 +6,11 @@ namespace GeometryToolbox
     public static class Algorithm
     {
         /// <summary>
+        /// Precision for double comparison.
+        /// </summary>
+        public const double DoublePrecision = 1E-15;
+
+        /// <summary>
         /// Euclidean distance.
         /// </summary>
         /// <param name="point">Vector for calculating.</param>

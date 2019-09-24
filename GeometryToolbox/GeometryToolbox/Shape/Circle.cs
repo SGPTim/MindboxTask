@@ -1,5 +1,4 @@
 using System;
-using GeometryToolbox.Shape.Query;
 
 namespace GeometryToolbox.Shape
 {
@@ -8,15 +7,15 @@ namespace GeometryToolbox.Shape
         public Point Center { get; }
         public double Radius { get; }
 
-        internal Circle(Point center, double radius)
+        public Circle(Point center, double radius)
         {
             Center = center;
             Radius = radius;
         }
 
-        public override void Accept(IVisitor visitor)
+        public override double GetArea()
         {
-            visitor.Visit(this);
+            return Math.PI * Radius * Radius;
         }
     }
 }
